@@ -1,4 +1,4 @@
-## Testing/Benchamarking Notes
+## Testing/Benchmarking Notes
 
 The test data is taken from [kaggle](https://www.kaggle.com/competitions/nyc-taxi-trip-duration/data?select=train.zip)
 
