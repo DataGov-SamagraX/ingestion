@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import presto = require('presto-client');
-import { CreateSchemaDto } from 'src/dto/schema.dto';
+import { CreateSchemaDto } from 'src/schema/schema.dto';
 import { PassThrough } from 'stream';
 import lento = require('lento');
 

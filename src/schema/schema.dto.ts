@@ -1,4 +1,4 @@
-import { AnonymizationDto } from './anonymyzation.dto';
+import { AnonymizationDto } from '../dto/anonymyzation.dto';
 
 enum field {
   integer = 'integer',
