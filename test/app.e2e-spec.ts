@@ -31,6 +31,9 @@ describe('AppController (e2e)', () => {
       next(x: any) {
         totalTrips++;
         totalPassengers += parseInt(x.passenger_count);
+        if (totalTrips === 1) {
+          console.log({ x });
+        }
       },
       error(err) {
         console.error('something wrong occurred: ' + err);

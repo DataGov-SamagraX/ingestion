@@ -1,9 +1,11 @@
 {
   "cSpell.words": [
     "anonymization",
+    "Chakshu",
     "metabase",
     "minio",
     "nestjs",
+    "oneofs",
     "pnpm",
     "rollups",
     "Trino",

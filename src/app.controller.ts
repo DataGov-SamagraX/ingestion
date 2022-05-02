@@ -18,4 +18,9 @@ export class AppController {
   getTotalCustomers() {
     return this.trinoService.query('select count(*) from minio.tiny.customer');
   }
+
+  @Get('/lambda/test')
+  testLambda() {
+    return this.appService.processLambda();
+  }
 }
