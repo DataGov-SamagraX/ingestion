@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["anonymization", "rollups"]
+  "cSpell.words": [
+    "anonymization",
+    "minio",
+    "nestjs",
+    "pnpm",
+    "rollups",
+    "Trino",
+    "uuidv"
+  ]
 }

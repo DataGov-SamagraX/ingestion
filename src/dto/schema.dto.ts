@@ -2,14 +2,14 @@ import { AnonymizationDto } from './anonymyzation.dto';
 
 enum field {
   integer = 'integer',
-  string = 'string',
+  int32 = 'int32', //number
+  int64 = 'int64', //number
+  float = 'float', //number
+  double = 'double', //number
+  string = 'string', //string
   boolean = 'boolean',
   date = 'date',
   dateTime = 'dateTime',
-  int32 = 'int32',
-  int64 = 'int64',
-  float = 'float',
-  double = 'double',
   byte = 'byte',
   binary = 'binary',
   nullable = 'nullable',

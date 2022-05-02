@@ -4,7 +4,7 @@ import { AppModule } from './../src/app.module';
 import { join } from 'path';
 import { parse } from 'csv-parse';
 import fs = require('fs');
-import { from, Observable } from 'rxjs';
+import { from } from 'rxjs';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -28,10 +28,9 @@ describe('AppController (e2e)', () => {
     let totalPassengers = 0;
     let totalTrips = 0;
     observable.subscribe({
-      next(x) {
+      next(x: any) {
         totalTrips++;
         totalPassengers += parseInt(x.passenger_count);
-        // console.log(x);
       },
       error(err) {
         console.error('something wrong occurred: ' + err);
