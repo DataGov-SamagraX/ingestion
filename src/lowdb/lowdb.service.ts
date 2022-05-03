@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { v4 as uuidv4 } from 'uuid';
 import { join } from 'path';
 import * as db from './db.json';
-import fs from 'fs';
+import * as fs from 'fs';
 
 @Injectable()
 export class DBService {
@@ -13,19 +13,21 @@ export class DBService {
   }
 
   getDbFileName() {
-    return join(__dirname, 'lowdb/db.json');
+    return join(__dirname, 'db.json');
   }
 
-  addSchemaData(data: any) {
+  addSchemaData(data: any): string {
     const id = uuidv4();
-    this.db.schema.push({ [id]: data });
+    this.db.schema[id] = data;
     fs.writeFileSync(this.getDbFileName(), JSON.stringify(this.db));
+    return id;
   }
 
-  addDBData(data: any) {
+  addDBData(data: any): string {
     const id = uuidv4();
-    this.db.db.push({ [id]: data });
+    this.db.db[id] = data;
     fs.writeFileSync(this.getDbFileName(), JSON.stringify(this.db));
+    return id;
   }
 
   removeDBDataById(id: string) {

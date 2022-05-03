@@ -30,7 +30,9 @@ Sample data shown below
   "dropoff_longitude": "-73.964630126953125",
   "dropoff_latitude": "40.765602111816406",
   "store_and_fwd_flag": "N",
-  "trip_duration": "455"
+  "trip_duration": "455",
+  "geo": 1,
+  "algebra": 21
 }
 ```
 

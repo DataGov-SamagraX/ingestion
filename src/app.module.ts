@@ -15,23 +15,6 @@ import { join } from 'path';
       isGlobal: true,
       envFilePath: ['.env.local', '.env'],
     }),
-    ClientsModule.register([
-      {
-        name: 'lambda',
-        transport: Transport.GRPC,
-        options: {
-          package: 'lambda',
-          protoPath: join(__dirname, 'proto/lambda.proto'),
-          loader: {
-            keepCase: true,
-            enums: String,
-            oneofs: true,
-            arrays: true,
-            objects: true,
-          },
-        },
-      },
-    ]),
   ],
   controllers: [AppController, SchemaController],
   providers: [AppService, DBService, TrinoService, SchemaService],

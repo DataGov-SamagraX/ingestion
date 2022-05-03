@@ -21,6 +21,9 @@ export class AppController {
 
   @Get('/lambda/test')
   testLambda() {
-    return this.appService.processLambda();
+    return this.appService.processLambdaPromise(
+      'function(data) { return `Hello ${data.name}!`; }',
+      { name: 'World' },
+    );
   }
 }

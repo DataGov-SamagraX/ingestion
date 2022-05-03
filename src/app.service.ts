@@ -30,12 +30,22 @@ export class AppService implements OnModuleInit {
     this.lambdaService = this.client.getService<LambdaService>('LambdaService');
   }
 
-  processLambda(): Observable<string> {
+  processLambda(body: string, data: any): Observable<string> {
     return this.lambdaService.process({
-      body: 'function(data) { return `Hello ${data.name}!`; }',
+      body,
       language: 'JAVASCRIPT',
-      testData: '{"name":"Chakshu","task":"shave yaks"}',
+      testData: JSON.stringify(data),
     });
+  }
+
+  processLambdaPromise(body: string, data: any): Promise<string> {
+    return this.lambdaService
+      .process({
+        body,
+        language: 'JAVASCRIPT',
+        testData: JSON.stringify(data),
+      })
+      .toPromise();
   }
 
   getHello(): string {

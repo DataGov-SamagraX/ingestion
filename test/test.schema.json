@@ -1,0 +1,81 @@
+{
+  "dbs": ["db1", "db2"],
+  "table": "trip",
+  "rollups": [
+    {
+      "db": "db1",
+      "rollups": [
+        {
+          "R1": {
+            "type": "timestamp",
+            "bucket": "Weekly"
+          },
+          "R2": { "type": "brin", "columns": ["field1"] },
+          "R3": { "type": "GIN", "columns": ["field2", "field3"] }
+        }
+      ]
+    }
+  ],
+  "definition": {
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/trip",
+    "definitions": {
+      "trip": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "vendor_id": {
+            "type": "string",
+            "format": "integer"
+          },
+          "pickup_datetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dropoff_datetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "passenger_count": {
+            "type": "integer"
+          },
+          "pickup_longitude": {
+            "type": "string"
+          },
+          "pickup_latitude": {
+            "type": "string"
+          },
+          "dropoff_longitude": {
+            "type": "string"
+          },
+          "dropoff_latitude": {
+            "type": "string"
+          },
+          "store_and_fwd_flag": {
+            "type": "string"
+          },
+          "trip_duration": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "dropoff_datetime",
+          "dropoff_latitude",
+          "dropoff_longitude",
+          "id",
+          "passenger_count",
+          "pickup_datetime",
+          "pickup_latitude",
+          "pickup_longitude",
+          "store_and_fwd_flag",
+          "trip_duration",
+          "vendor_id"
+        ],
+        "title": "trip"
+      }
+    }
+  }
+}
